@@ -25,7 +25,7 @@ This sample shows how to build and deploy Functions Hosted Skills on Azure Funct
 
 The runtime still uses agent-based identifiers for `.agent.md` files, `agents.config.yaml`, packages, environment variables, and HTTP endpoints. These identifiers are unchanged by the rebrand.
 
-Email delivery is optional. If you provide an email recipient, the deployment creates an Office 365 Outlook Connector Gateway and MCP server so the timer skill can email the digest. If you leave the recipient blank, no Office 365 resources are created and the timer skill returns the digest in its final response so you can verify the run in Function logs or Application Insights.
+Email delivery is optional. If you provide an email recipient, the deployment creates an Office 365 Outlook Connector Gateway and MCP server so the timer hosted skill can email the digest. If you leave the recipient blank, no Office 365 resources are created and the timer hosted skill returns the digest in its final response so you can verify the run in Function logs or Application Insights.
 
 ## Prerequisites
 
@@ -55,7 +55,7 @@ To enable email delivery, set `TO_EMAIL` before running `azd up`:
 azd env set TO_EMAIL you@example.com
 ```
 
-When email delivery is enabled, `azd up` provisions an Office 365 Outlook connection and MCP server. After deployment, authenticate the connection in the Connector Namespace portal before expecting the timer skill to send email.
+When email delivery is enabled, `azd up` provisions an Office 365 Outlook connection and MCP server. After deployment, authenticate the connection in the Connector Namespace portal before expecting the timer hosted skill to send email.
 
 Open the Connector Namespace portal from the deployed environment:
 
@@ -109,11 +109,11 @@ The chat hosted skill also exposes `POST /agents/main/chat`, `POST /agents/main/
 
 ## Verify the timer-triggered hosted skill
 
-The timer skill runs once per day by default. To verify timer runs, inspect Function logs or Application Insights for `Daily Microsoft Blog Summary Agent` responses.
+The timer hosted skill runs once per day by default. To verify timer runs, inspect Function logs or Application Insights for `Daily Microsoft Blog Summary Agent` responses.
 
-When `TO_EMAIL` is blank, the timer skill does not try to send email. It returns the complete digest as its final response so the digest appears in logs.
+When `TO_EMAIL` is blank, the timer hosted skill does not try to send email. It returns the complete digest as its final response so the digest appears in logs.
 
-When `TO_EMAIL` is set and the Office 365 connection is authenticated, the timer skill sends the digest to that recipient using the Office 365 Outlook MCP tool.
+When `TO_EMAIL` is set and the Office 365 connection is authenticated, the timer hosted skill sends the digest to that recipient using the Office 365 Outlook MCP tool.
 
 ## Observability
 
