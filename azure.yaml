@@ -1,6 +1,6 @@
-name: functions-quickstart-serverless-agents-azd
+name: functions-daily-blog-hosted-skills-azd
 metadata:
-  template: functions-quickstart-serverless-agents-azd@0.0.1-beta
+  template: functions-daily-blog-hosted-skills-azd@0.0.1-beta
 services:
   api:
     project: ./src
