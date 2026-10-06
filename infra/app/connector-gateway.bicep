@@ -59,7 +59,7 @@ resource office365McpServerConfig 'Microsoft.Web/connectorGateways/mcpserverconf
   name: mcpServerConfigName
   properties: {
     state: 'Enabled'
-    description: 'Office 365 Outlook send-email action for the serverless agents quickstart.'
+    description: 'Office 365 Outlook send-email action for the Functions Hosted Skills sample.'
     connectors: [
       {
         name: 'office365'
