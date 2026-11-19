@@ -1,0 +1,10 @@
+# This descriptor drives template package creation in the packaging pipeline.
+schemaVersion: 1
+identity: Azure.Functions.Templates.DailyBlogHostedSkillPython
+description: Create a Python Azure Functions app for Daily Blog Summarizer Hosted Skill, with deployment files for azd.
+projects:
+- name: Azure Functions Daily Blog Summarizer Hosted Skill (Python)
+  shortName: ai-hosted-skills-python
+  root: .
+  stack: python
+  language: Python
